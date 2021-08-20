@@ -1,6 +1,6 @@
 {
   "ipcMode": null,
-  "executionRoleArn": "arn:aws:iam::805927569999:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::9999:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
       "dnsSearchDomains": null,
@@ -28,7 +28,7 @@
       "environment": [
 		{
 		  "name": "CONNECTIONSTRINGS__DEFAULTCONNECTION",
-		  "value": "HOST=cnsd-db-8059-2756-9999.c9qhjznmhoyc.us-east-1.rds.amazonaws.com;DB=albumdatabase;UID=postgres;PWD=JMHRKlmovBb-arIOZH>u;PORT=5432;"
+		  "value": "HOST=cnsd-db-9999.c9qhjznmhoyc.us-east-1.rds.amazonaws.com;DB=albumdatabase;UID=postgres;PWD=vBb-arIOZH>u;PORT=5432;"
 		}
 	  ],
       "resourceRequirements": null,
@@ -69,7 +69,7 @@
     "EC2",
     "FARGATE"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-1:805927569999:task-definition/AlbumTaskDefinition:10",
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:9999:task-definition/AlbumTaskDefinition:10",
   "family": "AlbumTaskDefinition",
   "requiresAttributes": [
     {
