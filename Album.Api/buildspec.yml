@@ -4,7 +4,7 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 805927569999.dkr.ecr.us-east-1.amazonaws.com
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 9999.dkr.ecr.us-east-1.amazonaws.com
   build:
     commands:
       - echo Building the .Net project...
@@ -13,12 +13,12 @@ phases:
       - dotnet test Album.Api.Tests
       - echo Building the Docker image...
       - docker build -t cnsd/album .
-      - docker tag cnsd/album:latest 805927569999.dkr.ecr.us-east-1.amazonaws.com/cnsd/album:$CODEBUILD_BUILD_NUMBER
+      - docker tag cnsd/album:latest 9999.dkr.ecr.us-east-1.amazonaws.com/cnsd/album:$CODEBUILD_BUILD_NUMBER
   post_build:
     commands:
       - echo Pushing the Docker images...
-      - docker push 805927569999.dkr.ecr.us-east-1.amazonaws.com/cnsd/album:$CODEBUILD_BUILD_NUMBER
-      - printf '{"ImageURI":"%s"}' 805927569999.dkr.ecr.us-east-1.amazonaws.com/cnsd/album:$CODEBUILD_BUILD_NUMBER > imageDetail.json
+      - docker push 9999.dkr.ecr.us-east-1.amazonaws.com/cnsd/album:$CODEBUILD_BUILD_NUMBER
+      - printf '{"ImageURI":"%s"}' 9999.dkr.ecr.us-east-1.amazonaws.com/cnsd/album:$CODEBUILD_BUILD_NUMBER > imageDetail.json
       - sed -i "s/<connectionstring>/$CONNECTIONSTRING/" taskdef.json
       
 artifacts:
